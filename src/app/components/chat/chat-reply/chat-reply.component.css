@@ -1,0 +1,21 @@
+.model-image-upload
+{
+    width: 400px;
+    height: 400px;
+    background-size: 100%;
+    border-radius: 5px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.post-message
+{
+    width: 100%;
+}
+
+.post-message textarea
+{
+    font-size: 20px;
+    font-weight: 400;
+}

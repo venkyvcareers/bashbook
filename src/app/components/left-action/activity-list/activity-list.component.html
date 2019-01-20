@@ -1,0 +1,79 @@
+<div class="side-one">
+  <div class="row heading">
+    <div class="col-sm-3 col-xs-3 heading-avatar">
+      <div class="heading-avatar-icon">
+        <img src="https://bootdey.com/img/Content/avatar/avatar1.png">
+      </div>
+    </div>
+    <div class="col-sm-1 col-xs-1 heading-dot1 pull-right">
+      <div class="dropdown">
+        <i class="fa fa-ellipsis-v pull-right dropdown-toggle" data-toggle="dropdown" aria-hidden="true"></i>
+        <ul class="dropdown-menu">
+          <li><a (click)="ShowNewGroup()">New Group</a></li>
+          <li><a (click)="ShowEditProfile()">Profile</a></li>
+          <li><a (click)="ShowNewEvent()">New Event</a></li>
+          <li><a>Starred</a></li>
+          <li><a>Logout</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-1 col-xs-1 heading-compose pull-right" (click)="ShowNewEvent()">
+      <i class="fa fa-comments fa pull-right"></i>
+    </div>
+
+    <div class="col-sm-1 col-xs-1 heading-dot  pull-right" (click)="showFriendRequest()">
+        <i href="#" class="fa fa-user pull-right" aria-hidden="true"></i>
+        <span class="friend-request-count">{{5}}</span>
+      </div>
+
+  </div>
+
+  <div class="row searchBox">
+    <div class="col-sm-12 searchBox-inner">
+      <div class="form-group has-feedback">
+        <input id="searchText" type="text" class="form-control" name="searchText" placeholder="Search">
+        <span class="glyphicon glyphicon-search form-control-feedback"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="row sideBar">
+    <div class="row sideBar-body" (click)="loadEntity(item.EntityId, item.EntityTypeId)" *ngFor="let item of activityList.Contacts">
+      <div class="col-sm-3 col-xs-3 sideBar-avatar">
+        <div class="avatar-icon">
+          <img [src]="item.Image">
+        </div>
+      </div>
+      <div class="col-sm-9 col-xs-9 sideBar-main">
+        <div class="row">
+          <div class="col-sm-8 col-xs-8 sideBar-name">
+            <h4 class="name-meta">{{item.Name}}
+            </h4>
+          </div>
+          <div class="col-sm-4 col-xs-4 pull-right sideBar-time">
+            <span class="time-meta pull-right">18:18
+            </span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="sideBar-footer">
+            <i class="fa fa-check-square"></i>
+            <span class="recent-message">Hello, Good Morning!!!</span>
+            <i class="fa fa-chevron-down dropdown dropdown-toggle" data-toggle="dropdown"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Left Action Area-->
+<app-group></app-group>
+
+<app-profile></app-profile>
+
+<app-event></app-event>
+
+<app-friend-request></app-friend-request>
+
+<!--Left Action Area-->

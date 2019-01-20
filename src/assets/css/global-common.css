@@ -1,0 +1,47 @@
+.modal-header {
+    text-align: center;
+}
+
+.modal-title {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+.btn {
+    font-size: 18px;
+}
+
+.close {
+    font-size: 36px;
+}
+
+.md-form {
+    width: 100%;
+    padding: 10px 30px;
+}
+
+.md-form label {
+    padding-left: 30px;
+}
+
+.md-form input, .md-form textarea, .md-form label {
+    font-size: 21px;
+    font-weight: 400;
+}
+
+.md-form label, .md-form label.active {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.md-form label {
+    top: 1.65rem;
+}
+
+.dropdown-menu li {
+    font-size: 18px;
+}

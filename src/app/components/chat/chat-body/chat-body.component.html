@@ -1,0 +1,145 @@
+<div class="row message" id="conversation" #content>
+  <!-- <div class="row message-previous">
+    <div class="col-sm-12 previous">
+      <a onclick="previous(this)" id="ankitjain28" name="20">
+        Show Previous Message!
+      </a>
+    </div>
+  </div> -->
+<!-- 
+  <div class="row message-body">
+    <div class="col-sm-12 message-main-receiver">
+      <div class="receiver">
+        <div class="message-text">
+          Hi, what are you doing?!
+        </div>
+        <span class="message-time pull-right">
+          12:35
+        </span>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row message-body">
+    <div class="col-sm-12 message-main-sender">
+      <div class="sender">
+        <div class="message-text">
+          Hi, what are you doing?!
+        </div>
+        <span class="message-time pull-right">
+          12:35
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="row message-body">
+    <div class="col-sm-12 message-main-receiver">
+      <div class="receiver">
+        <div class="message-image">
+          <img src="https://bootdey.com/img/Content/avatar/avatar6.png" />
+        </div>
+        <div class="message-time-block">
+          <div class="message-text-block pull-left">
+            <p>some text message
+              <span class="message-time pull-right">
+                11:35 PM
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="row message-body">
+    <div class="col-sm-12 message-main-receiver">
+      <div class="receiver">
+        <div class="message-image">
+          <img src="https://bootdey.com/img/Content/avatar/avatar6.png" />
+        </div>
+        <div class="message-time-block">
+          <div class="message-text-block pull-left">
+            <p>
+              <span class="message-time pull-right">
+                11:35 PM
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row message-body">
+    <div class="col-sm-12 message-main-sender">
+      <div class="sender">
+        <div class="message-image">
+          <img src="https://bootdey.com/img/Content/avatar/avatar6.png" />
+        </div>
+        <div class="message-time-block">
+          <div class="message-text-block pull-left">
+            <p>text message to be displayed in multiple lines
+              <span class="message-time pull-right">
+                12:35 AM
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="row message-body" *ngFor="let item of conversationList">
+    <div class="col-sm-12" [class.message-main-sender]="item.PostedBy == userId" [class.message-main-receiver]="item.PostedBy != userId">
+      <!-- <div [class.sender]="item.PostedBy == userId" [class.receiver]="item.PostedBy != userId">
+        <div class="message-text" *ngIf="item.ContentTypeId == ContentType_Text">
+          {{item.Text}}
+        </div>
+        <span class="message-time pull-right" *ngIf="item.ContentTypeId == ContentType_Text">
+          {{item.PostedOn | totime}}
+        </span>
+
+        <div class="message-image" *ngIf="item.ContentTypeId != ContentType_Text">
+          <img [src]="item.Url" />
+        </div>
+        <div class="message-time-block" *ngIf="item.ContentTypeId != ContentType_Text">
+          <div class="message-text-block pull-left">
+            <p>{{item.Text}}
+              <span class="message-time pull-right">
+                {{item.PostedOn | totime}}
+              </span>
+            </p>
+          </div>
+        </div>
+
+      </div> -->
+
+      <div [class.sender]="item.PostedBy == userId" [class.receiver]="item.PostedBy != userId" [class.imageContent]="item.ContentTypeId != ContentType_Text" [class.textContent]="item.ContentTypeId == ContentType_Text">
+
+        <div class="message-text" *ngIf="item.ContentTypeId == ContentType_Text">
+          {{item.Text}}
+        </div>
+        <span class="message-time pull-right" *ngIf="item.ContentTypeId == ContentType_Text">
+          {{item.PostedOn | totime}}
+        </span>
+
+        <div class="message-image" *ngIf="item.ContentTypeId != ContentType_Text">
+          <img [src]="item.Url" />
+        </div>
+        <div class="message-time-block" *ngIf="item.ContentTypeId != ContentType_Text">
+          <div class="message-text-block pull-left">
+            <p>{{item.Text}}
+              <span class="message-time pull-right">
+                {{item.PostedOn | totime}}
+              </span>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

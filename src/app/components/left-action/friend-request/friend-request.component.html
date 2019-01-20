@@ -1,0 +1,87 @@
+<div class="side-left friend-requests" #leftActionDiv>
+  
+  <div class="incoming-requests">
+  <div class="row newMessage-heading">
+    <div class="row newMessage-main">
+      <div class="col-sm-2 col-xs-2 newMessage-back">
+        <i class="fa fa-arrow-left" (click)="hide()" aria-hidden="true"></i>
+      </div>
+      <div class="col-sm-10 col-xs-10 newMessage-title">
+        Friend Requests
+      </div>
+    </div>
+  </div>
+
+  <div class="row composeBox">
+    <div class="col-sm-12 composeBox-inner">
+      <div class="form-group has-feedback">
+        <h2 class="title">Incoming Requests</h2>
+      </div>
+    </div>
+  </div>
+
+  <div class="row compose-sideBar">
+    <div class="row sideBar-body" *ngFor="let item of list" (mouseenter)="showFriendOptions(item)" (mouseleave)="hideFriendOptions()">
+      <div class="col-sm-3 col-xs-3 sideBar-avatar">
+        <div class="avatar-icon">
+          <img src="https://bootdey.com/img/Content/avatar/avatar1.png">
+        </div>
+      </div>
+      <div class="col-sm-9 col-xs-9 sideBar-main">
+        <div class="row">
+          <div class="col-sm-6 col-xs-6 sideBar-name">
+              <div class="name-meta">John Doe
+                <span class="sent-history">4d</span>
+              </div>
+                <div class="contact-number">8787878787
+                </div>                
+          </div>
+          <div class="col-sm-6 col-xs-6 pull-right sideBar-add-friend" *ngIf="item==currentItem">
+            <button type="submit" class="accept-friend"><i class="fa fa-check" aria-hidden="true"></i></button>
+            <button type="submit" class="reject-friend"><i class="fa fa-times" aria-hidden="true"></i></button>
+            <button type="submit" class="ignore-friend"><i class="fa fa-eye-slash" aria-hidden="true"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>        
+  </div>
+</div>
+
+<div class="suggested-friends">
+
+  
+    <div class="row composeBox">
+      <div class="col-sm-12 composeBox-inner">
+        <div class="form-group has-feedback">
+            <h2 class="title">Suggested Friends</h2>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row compose-sideBar">
+      <div class="row sideBar-body" *ngFor="let item of suggest" (mouseenter)="showSuggestOptions(item)" (mouseleave)="hideSuggestOptions()">
+        <div class="col-sm-3 col-xs-3 sideBar-avatar">
+          <div class="avatar-icon">
+            <img src="https://bootdey.com/img/Content/avatar/avatar1.png">
+          </div>
+        </div>
+        <div class="col-sm-9 col-xs-9 sideBar-main">
+          <div class="row">
+            <div class="col-sm-6 col-xs-6 sideBar-name">
+                <div class="name-meta">John Doe
+                  <span class="sent-history">4d</span>
+                </div>          
+            </div>
+            <div class="col-sm-6 col-xs-6 pull-right sideBar-add-friend" *ngIf="item==currentSuggest">
+              <button type="submit" class="accept-friend"><i class="fa fa-plus" aria-hidden="true"></i> Add</button>
+              <!-- <button type="submit" class="reject-friend"><i class="fa fa-times" aria-hidden="true"></i></button>
+              <button type="submit" class="ignore-friend"><i class="fa fa-eye-slash" aria-hidden="true"></i></button>               -->
+            </div>
+          </div>
+        </div>
+      </div>                         
+    </div>
+  </div>
+
+
+</div>

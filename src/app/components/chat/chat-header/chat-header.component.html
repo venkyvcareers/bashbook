@@ -1,0 +1,35 @@
+<div class="row heading">
+  <div class="col-sm-2 col-md-1 col-xs-3 heading-avatar">
+    <div class="heading-avatar-icon">
+      <img src="https://bootdey.com/img/Content/avatar/avatar6.png">
+    </div>
+  </div>
+  <div class="col-sm-6 col-xs-7 heading-name">
+    <a class="heading-name-meta">John Doe
+    </a>
+    <span class="heading-online">Online</span>
+  </div>
+
+  <div class="col-sm-1 col-xs-1  heading-dot  pull-right">
+    <div class="dropdown">
+      <i class="fa fa-ellipsis-v pull-right dropdown-toggle" data-toggle="dropdown" aria-hidden="true"></i>
+      <ul class="dropdown-menu dropdown-menu-right" style="top:20px;">
+        <li><a (click)="ShowEditEvent()">Event Info</a></li>
+        <li><a href="#">CSS</a></li>
+        <li><a href="#">JavaScript</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-sm-1 col-xs-1 heading-dot  pull-right">
+    <i href="#" class="fa fa-bars pull-right" aria-hidden="true"></i>
+  </div>
+  <div class="col-sm-1 col-xs-1 heading-dot  pull-right">
+    <i class="fa fa-search pull-right" aria-hidden="true"></i>
+  </div>
+</div>
+
+<!-- right action components -->
+
+<app-edit-event (resetSize)="resetSizeChatHolder()"></app-edit-event>
+
+<!-- right action components -->

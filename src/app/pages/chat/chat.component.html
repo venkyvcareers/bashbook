@@ -1,0 +1,21 @@
+<div class="container-fluid main-container">
+  <div class="row app-one">
+    <div class="col-sm-3 side">
+
+      <app-activity-list (loadEntityPostList)="loadPostList($event)"></app-activity-list>
+
+    </div>
+
+    <div class="col-sm-9 side conversation">
+
+      <div #chatHolderDiv>
+        <app-chat-header (reduceSize)="reduceChatBodySize()" (resetSize)="resetChatBodySize()"></app-chat-header>
+
+        <app-chat-body [conversationList]="chatList"></app-chat-body>
+
+        <app-chat-reply (pushPost)="pushPost($event)" [currentEntityId]="currentEntityId" [currentEntityTypeId]="currentEntityTypeId"></app-chat-reply>
+      </div>
+    </div>
+
+  </div>
+</div>

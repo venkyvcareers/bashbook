@@ -1,0 +1,38 @@
+<div class="side-left" #leftActionDiv>
+
+  <div class="row newMessage-heading">
+    <div class="row newMessage-main">
+      <div class="col-sm-2 col-xs-2 newMessage-back">
+        <i class="fa fa-arrow-left" (click)="hide()" aria-hidden="true"></i>
+      </div>
+      <div class="col-sm-10 col-xs-10 newMessage-title">
+        New Event
+      </div>
+    </div>
+  </div>
+
+  <div class="row compose-sideBar new-group">
+    <form name="form" #form="ngForm" (ngSubmit)="form.valid && save()">
+      <div class="upload-icon" (click)="showFileExplorer()" [ngStyle]="{'background-image': 'url('+ model.Image +')'}">
+        <i class="fa fa-cloud-upload" aria-hidden="true"></i>
+        <!-- <img [src]="model.Image" alt=""  /> -->
+        <input type="file" style="display: none;" #fileUpload (change)="onFileSelect($event)" class="form-control" name="ProfilePic">
+        <span>Upload Event Icon</span>
+      </div>
+     
+      <div class="md-form">
+        <input type="text" class="form-control" [(ngModel)]="model.Title" required #Name name="Title">
+        <label>Title</label>
+      </div>
+
+      <div class="md-form">
+        <textarea class="form-control md-textarea" rows="1" [(ngModel)]="model.Message" required #Message name="Message"></textarea>
+        <label>Message</label>
+      </div>
+
+      <div class="create-group">
+        <button type="submit" class="create-group-icon"><i class="fa fa-check" aria-hidden="true"></i></button>
+      </div>
+    </form>
+  </div>
+</div>
